@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="styles/styles.css" />
   </head>
   <body>
+    
     <!--Header-->
     <header class="header">
       <div class="container page-header">
@@ -29,7 +30,7 @@
           <a class="link header-logo" href="./index.html"><span class="web">Web</span>Studio</a>
           <ul class="list header-list">
             <li class="header-item">
-              <a class="navigation current link" href="index.html">Cтудия</a>
+              <a class="navigation current link active" href="index.html">Cтудия</a>
             </li>
             <li class="header-item">
               <a class="navigation link" href="portfolio.html">Портфолио</a>
@@ -54,7 +55,7 @@
       <section class="hero overlay">
         <div class="container">
           <h1 class="inside-text">Эффективные решения для вашего бизнеса</h1>
-          <button class="button" type="button">Заказать услугу</button>
+          <button type="button" class="button" data-modal-open>Замовити послугу</button>
         </div>
       </section>
       <section class="advantages">
@@ -98,13 +99,19 @@
           <h2 class="our_work_header">Чем мы занимаемся</h2>
           <ul class="list photo-work">
             <li class="photo-work-item">
+              <div class="work-top-wrap">
               <img src="images/box1.jpg" width="370" height="294" alt="печатает на клавиатуре" />
+            <p class="work-top-text">Десктопні додатки</p></div>
             </li>
             <li class="photo-work-item">
+              <div class="work-top-wrap">
               <img src="images/box2.jpg" width="370" height="294" alt="пользуется телефоном" />
+              <p class="work-top-text">Мобільні додатки</p></div>
             </li>
             <li class="photo-work-item">
+              <div class="work-top-wrap">
               <img src="images/box3.jpg" width="370" height="294" alt="пользуется планшетом" />
+              <p class="work-top-text">Мобільні додатки</p></div>
             </li>
           </ul>
         </div>
@@ -336,5 +343,12 @@
       </div>
     </div>
     </footer>
+    <div class="backdrop is-hidden" data-modal>
+      <div class="modal">
+        <button data-modal-close><svg class="close-button" width="20" height="20">
+      <use href="/images/modal-close.svg#icon-close-black-18dp-2-1-1"></use></svg></button>
+    </div>
+  </div>
+  <script src="/js/modal.js"></script>
   </body>
 </html>

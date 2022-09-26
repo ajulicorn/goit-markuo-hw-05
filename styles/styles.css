@@ -121,9 +121,28 @@ color:var(--color-btn-link);
 .current{
     color:var(--color-btn-link);
     }
+
+    .active{
+        position: relative;
+    }
+.active::after{
+position: absolute;
+content:'';
+width: 100%;
+height: 4px;
+border-radius: 2px;
+left:0;
+background-color: #2196F3;
+bottom: 0;
+}
 .header-item:hover,
 .header-item:focus{
 color:var(--color-btn-link);
+transition-property: background-color,transform;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: 0;
+
 }
 
 
@@ -153,7 +172,12 @@ align-items: center;}
     .email:focus,
     .phone:hover,
     .phone:focus{
-     color:var(--color-btn-link);}
+     color:var(--color-btn-link);
+     transition-property: background-color,transform;
+     transition-duration: 250ms;
+     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+     transition-delay: 0;}
+     
 
      .envelope-icon{
          Height: 12px;
@@ -175,6 +199,10 @@ fill: currentColor;;}
     .icon-phone:hover,
     .icon-phone:focus{
     color:var(--color-btn-link);
+    transition-property: background-color,transform;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay:0;
     }
     
 
@@ -295,11 +323,31 @@ margin-top: 10px;
 .work{
     padding-bottom: 94px;
 }
+
 .photo-work{
     display: flex;
 }
+
+.work-top-text{
+    position: absolute;
+    bottom: 0;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    initial-letter: 0.03em;
+    text-transform: uppercase;
+    color:#FFFFFF;
+    background: rgba(47, 48, 58, 0.8);
+    width: 100%;
+    height: 70px;}
 .photo-work .photo-work-item:not(:last-child){
     margin-right: 30px;
+}
+.work-top-wrap{
+    position: relative;
 }
 /* our team styles */
 .ourteam{
@@ -621,4 +669,41 @@ line-height: 1.8;
 letter-spacing: 0.03em;
 
 color:var(--color-text);
+}
+
+.backdrop{
+    position:absolute;
+    top:0;
+    background: rgba(0, 0, 0, 0.2);
+    width: 100%;
+    height: 100%;
+    }
+
+    .backdrop .is-hidden  {
+        opacity: 0;
+        pointer-events: none;
+        }
+
+.modal{
+width: 528px;
+min-height: 581px;
+background-color: #FFFFFF;
+border-radius: 4px;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50, -50%);
+}
+
+.modal-close{
+position: absolute;
+right: 10px;
+top:10px;
+width: 30px;
+height: 30px;
+display: flex;
+justify-content: center;
+align-items: center;
+background: #FFFFFF;
+border: 1px solid rgba(0, 0, 0, 0.1);
 }
